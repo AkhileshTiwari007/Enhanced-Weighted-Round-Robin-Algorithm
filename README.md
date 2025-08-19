@@ -286,6 +286,7 @@ This project welcomes contributions! Please:
 
 **For questions or support**: Please open an issue in the repository or contact the development team.
 
-**Last Updated**: December 2024
+**Last Updated**: Auguest 2025
 
 **Version**: 1.0.0 
+
