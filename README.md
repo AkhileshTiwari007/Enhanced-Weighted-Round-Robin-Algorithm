@@ -59,10 +59,9 @@ The simulation can be configured for different scenarios by modifying these para
 
 | **Parameter** | **Description** | **Default Value** | **Range** |
 |---------------|-----------------|-------------------|-----------|
-| `numCloudlets` | Number of tasks to process | 5000 | 10 - 10000 |
-| `numVMs` | Number of virtual machines | 350 | 3 - 500 |
-| `numDatacenters` | Number of datacenters | 13 | 1 - 20 |
-| `idealResponseTime` | Target response time for SLA | 580 ms | 100 - 1000 ms |
+| `numCloudlets` | Number of tasks to process | 1000 | 10 - 1300 |
+| `numVMs` | Number of virtual machines | 100 | 3 - 130 |
+| `numDatacenters` | Number of datacenters | 5 | 1 - 9 |
 
 ### Task Configuration
 - **Task Length Range**: 100,000 - 400,000 MI (Million Instructions)
@@ -166,13 +165,10 @@ Where BT₁, BT₂, BT₃ are the top-3 burst times in the system.
 |---------------|---------------|-----------------|----------|-------------|
 | **DLB** | Degree of Load Balancing | Difference between most-loaded and least-loaded VM | tasks | `maxTasks - minTasks` |
 | **RT** | Response Time | Time from cloudlet submission to completion | ms | `finishTime - submitTime` |
-| **TP** | Throughput | Completed tasks per second | cloudlets/sec | `totalCompleted / makespan` |
 | **RU** | Resource Utilization | % of VMs actively processing | % | `activeVMs / totalVMs × 100` |
-| **MS** | Makespan | Time taken for last cloudlet to finish | ms | `max(finishTime)` |
 | **FT** | Fault Tolerance | Failed cloudlets ratio | % | `failed / total × 100` |
 | **S** | Scalability | Inverse of slowdown | % | `(idealRT / actualRT) × 100` |
 | **SV** | SLA Violation Rate | % of cloudlets violating SLA deadline | % | `violations / totalCompleted × 100` |
-| **AO** | Associated Overhead | Time taken to assign tasks | ms | `scheduling_end - scheduling_start` |
 | **MT** | Migration Time | Total time in task transfers | ms | `sum(migration_delays)` |
 
 ### Performance Targets
@@ -216,14 +212,11 @@ cloud_sim_project/
 📊 Performance Metrics:
 Degree of Load Balancing (DLB): 12 (task difference between busiest and idle VM)
 Average Response Time (RT): 2378.31 ms
-Throughput (TP): 754.4281 Cloudlets/sec
 Resource Utilization (RU): 75% (system-wide)
 Active VMs: 338/350 (96.57%)
-Makespan (MS): 6099.99 ms
 Fault Tolerance Rate (FT): 4.66% (cloudlets failed)
 Scalability (S): 24.39% (based on ideal RT 580.00)
 SLA Violation Rate (SV): 8.5% (realistic cloud behavior)
-Associated Overhead (AO): 2245 ms (time to assign all cloudlets)
 Migration Time (MT): 347 (estimated task reassignments)
 
 🚀 Hybrid Algorithm Advantages:
@@ -289,13 +282,10 @@ This project welcomes contributions! Please:
 4. Add comprehensive tests
 5. Submit a pull request with detailed documentation
 
-## 📄 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
----
 
 **For questions or support**: Please open an issue in the repository or contact the development team.
 
 **Last Updated**: December 2024
+
 **Version**: 1.0.0 
