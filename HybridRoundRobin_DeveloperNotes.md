@@ -214,13 +214,10 @@ MaxAllowedTime = ExpectedTime × (1 + Tolerance)
 |------------|-------------|----------|
 | **DLB** | `maxTasks - minTasks` | tasks |
 | **RT** | `finishTime - submitTime` | ms |
-| **TP** | `totalCompleted / makespan` | cloudlets/sec |
 | **RU** | `(totalBusyTime / totalCapacity) × 100` | % |
-| **MS** | `max(finishTime)` | ms |
 | **FT** | `(failed / total) × 100` | % |
 | **S** | `(idealRT / actualRT) × 100` | % |
 | **SV** | `(violations / totalCompleted) × 100` | % |
-| **AO** | `scheduling_end - scheduling_start` | ms |
 | **MT** | `sum(migration_delays)` | ms |
 
 ## 🧠 Logic Explanation in Plain Words
@@ -429,15 +426,12 @@ if (cloudletStates.size() <= 100) {
 |----------|----------------|
 | **Makespan** | Total time from first task start to last task completion |
 | **Quantum** | Time slice allocated to each task before context switching |
-| **SLA** | Service Level Agreement - performance guarantees |
 | **DLB** | Degree of Load Balancing - measure of task distribution fairness |
 | **RT** | Response Time - time from task submission to completion |
-| **TP** | Throughput - number of tasks completed per unit time |
 | **RU** | Resource Utilization - percentage of available resources used |
 | **FT** | Fault Tolerance - ability to handle task failures |
 | **S** | Scalability - how well system performs under increased load |
 | **SV** | SLA Violation Rate - percentage of tasks missing deadlines |
-| **AO** | Associated Overhead - time spent on scheduling decisions |
 | **MT** | Migration Time - time spent moving tasks between VMs |
 | **MIPS** | Million Instructions Per Second - measure of processing power |
 | **PE** | Processing Element - CPU core |
@@ -445,5 +439,6 @@ if (cloudletStates.size() <= 100) {
 | **VM** | Virtual Machine - computing resource that processes tasks |
 
 ---
+
 
 **Note**: This developer guide is designed to help both technical and semi-technical readers understand the implementation. For specific questions about the algorithm or code modifications, refer to the inline comments in `CloudSimExample1.java`. 
